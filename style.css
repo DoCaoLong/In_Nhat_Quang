@@ -1093,7 +1093,7 @@ li {
 }
 .footer_category_wrap {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(201px, 1fr));
     gap: 32px;
 }
 .category_item_title {
@@ -2010,6 +2010,7 @@ li {
     }
     .footer_category_wrap {
         gap: 24px 14px;
+        grid-template-columns: repeat(2, 1fr);
     }
     .footer_category_item {
         font-size: 12px;
