@@ -15,9 +15,17 @@
             href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
             rel="stylesheet"
         />
+        <link
+            href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.3.0/flickity.min.css"
+        />
     </head>
     <body>
-        <header>
+        <header class="header_pc">
             <div class="header_top">
                 <div class="container">
                     <div class="header_top_right">
@@ -52,15 +60,67 @@
                         <div class="header_logo">
                             <img src="./imgs/logo.png" alt="" />
                         </div>
-                        <div class="header_search">
+                        <div id="search" class="header_search">
                             <input
                                 class="regular_16"
+                                id="search-input"
                                 type="text"
                                 placeholder="Tìm ấn phẩm"
                             />
-                            <button>
-                                <img src="./imgs/icons/search.svg" alt="" />
+                            <button id="clear-btn" style="display: none">
+                                ✖
                             </button>
+                            <button id="search-btn">
+                                <img
+                                    src="./imgs/icons/search.svg"
+                                    alt="Tìm kiếm"
+                                />
+                            </button>
+                            <ul id="search-results">
+                                <li class="search_ressult_item">
+                                    <p class="medium_16 line_2">
+                                        Lorem ipsum dolor sit,
+                                    </p>
+                                    <div class="search_ressult_img">
+                                        <img
+                                            src="imgs/product_demo.png"
+                                            alt=""
+                                        />
+                                    </div>
+                                </li>
+                                <li class="search_ressult_item">
+                                    <div class="search_ressult_wrap">
+                                        <p class="medium_16 line_2">
+                                            Lorem ipsum dolor sit, amet
+                                            consectetur adipisicing elit. In,
+                                            exercitationem!
+                                        </p>
+                                        <p class="medium_14">1.000.000đ</p>
+                                    </div>
+                                    <div class="search_ressult_img">
+                                        <img
+                                            src="imgs/product_demo.png"
+                                            alt=""
+                                        />
+                                    </div>
+                                </li>
+                                <li class="search_ressult_item">
+                                    <div class="search_ressult_wrap">
+                                        <p class="medium_16 line_2">
+                                            Lorem ipsum dolor sit, amet
+                                            consectetur adipisicing elit. In,
+                                            exercitationem!
+                                        </p>
+                                        <p class="medium_14">1.000.000đ</p>
+                                    </div>
+                                    <div class="search_ressult_img">
+                                        <img
+                                            src="imgs/product_demo.png"
+                                            alt=""
+                                        />
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
                         <div class="header_mid_right">
                             <div class="header_cart">
@@ -135,181 +195,1374 @@
                 </div>
             </div>
         </header>
-        <main></main>
-        <!-- <footer id="footer" class="footer">
+        <div class="header_mb">
+            <div class="header_wrap_mb">
+                <div class="header_left">
+                    <div class="header_mb_logo">
+                        <img src="./imgs/logo.png" alt="" />
+                    </div>
+                    <div id="search" class="header_mb_search">
+                        <input
+                            class="regular_16"
+                            id="search-input"
+                            type="text"
+                            placeholder="Tìm ấn phẩm"
+                        />
+                        <button id="clear-btn" style="display: none">✖</button>
+                        <button id="search-btn">
+                            <img
+                                src="./imgs/icons/search_black.svg"
+                                alt="Tìm kiếm"
+                            />
+                        </button>
+                        <ul id="search-results">
+                            <li class="search_ressult_item">
+                                <p class="medium_16 line_2">
+                                    Lorem ipsum dolor sit,
+                                </p>
+                                <div class="search_ressult_img">
+                                    <img src="imgs/product_demo.png" alt="" />
+                                </div>
+                            </li>
+                            <li class="search_ressult_item">
+                                <div class="search_ressult_wrap">
+                                    <p class="medium_16 line_2">
+                                        Lorem ipsum dolor sit, amet consectetur
+                                        adipisicing elit. In, exercitationem!
+                                    </p>
+                                    <p class="medium_14">1.000.000đ</p>
+                                </div>
+                                <div class="search_ressult_img">
+                                    <img src="imgs/product_demo.png" alt="" />
+                                </div>
+                            </li>
+                            <li class="search_ressult_item">
+                                <div class="search_ressult_wrap">
+                                    <p class="medium_16 line_2">
+                                        Lorem ipsum dolor sit, amet consectetur
+                                        adipisicing elit. In, exercitationem!
+                                    </p>
+                                    <p class="medium_14">1.000.000đ</p>
+                                </div>
+                                <div class="search_ressult_img">
+                                    <img src="imgs/product_demo.png" alt="" />
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="header_right">
+                    <div class="header_mb_cart">
+                        <img src="./imgs/icons/cart_white.svg" alt="" />
+                        <div class="cart_banged_mb"><span>10</span></div>
+                    </div>
+                    <div class="header_mb_hambuger">
+                        <i class="bx bx-menu"></i>
+                    </div>
+                </div>
+            </div>
+            <nav class="menu_nav">
+                <ul>
+                    <li><a href="#">TRANG CHỦ</a></li>
+                    <li>
+                        <a href="#">GIỚI THIỆU</a>
+                    </li>
+                    <li>
+                        <div class="submenu_mb">
+                            <a href="#"
+                                ><p>ẤN PHẨM QUẢNG CÁO</p>
+                                <img src="./imgs/icons/arrow_black.svg" alt=""
+                            /></a>
+                            <div class="submenu_mb_content">
+                                <a href="#">Submenu 1</a>
+                                <a href="#">Submenu 2</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="submenu_mb">
+                            <a href="#"
+                                ><p>ẤN PHẨM VĂN PHÒNG</p>
+                                <img src="./imgs/icons/arrow_black.svg" alt=""
+                            /></a>
+                            <div class="submenu_mb_content">
+                                <a href="#">Submenu 1</a>
+                                <a href="#">Submenu 2</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="submenu_mb">
+                            <a href="#"
+                                ><p>ẤN PHẨM KHÁC</p>
+                                <img src="./imgs/icons/arrow_black.svg" alt=""
+                            /></a>
+                            <div class="submenu_mb_content">
+                                <a href="#">Submenu 1</a>
+                                <a href="#">Submenu 2</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="submenu_mb">
+                            <a href="#"
+                                ><p>THIẾT KẾ QUẢNG CÁO</p>
+                                <img src="./imgs/icons/arrow_black.svg" alt=""
+                            /></a>
+                            <div class="submenu_mb_content">
+                                <a href="#">Submenu 1</a>
+                                <a href="#">Submenu 2</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">TIN TỨC</a>
+                    </li>
+                    <li>
+                        <a href="#">LIÊN HỆ</a>
+                    </li>
+                    <li>
+                        <a class="contact_nav" href="#"
+                            ><img src="./imgs/icons/phone.svg" alt="" />
+                            <p>0913.513.448</p></a
+                        >
+                    </li>
+                    <li>
+                        <div class="menu_nav_auth">
+                            <button>Đăng Ký</button>
+                            <button>Đăng nhập</button>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <main>
+            <section class="home_banner">
+                <div class="container">
+                    <div class="banner_list banner_slider">
+                        <div class="banner_item">
+                            <img src="./imgs/banner.png" alt="" />
+                        </div>
+                        <div class="banner_item">
+                            <img src="./imgs/banner2.png" alt="" />
+                        </div>
+                        <div class="banner_item">
+                            <img src="./imgs/banner3.png" alt="" />
+                        </div>
+                    </div>
+                    <div class="custom-dots_banner">
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                </div>
+            </section>
+            <!-- Products -->
+            <section class="product">
+                <div class="container">
+                    <div class="product_top">
+                        <div
+                            class="product_title medium_20 text-base mb-text-sm"
+                        >
+                            Danh mục sản phẩm
+                        </div>
+                        <div class="product_line"></div>
+                        <a href="#" class="product_top-cta">
+                            <p class="txt_orange regular_16 mb-text-sm">
+                                Xem tất cả
+                            </p>
+                            <svg
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M14.4301 18.8201C14.2401 18.8201 14.0501 18.7501 13.9001 18.6001C13.6101 18.3101 13.6101 17.8301 13.9001 17.5401L19.4401 12.0001L13.9001 6.46012C13.6101 6.17012 13.6101 5.69012 13.9001 5.40012C14.1901 5.11012 14.6701 5.11012 14.9601 5.40012L21.0301 11.4701C21.3201 11.7601 21.3201 12.2401 21.0301 12.5301L14.9601 18.6001C14.8101 18.7501 14.6201 18.8201 14.4301 18.8201Z"
+                                    fill="#FC5430"
+                                />
+                                <path
+                                    d="M20.33 12.75H3.5C3.09 12.75 2.75 12.41 2.75 12C2.75 11.59 3.09 11.25 3.5 11.25H20.33C20.74 11.25 21.08 11.59 21.08 12C21.08 12.41 20.74 12.75 20.33 12.75Z"
+                                    fill="#FC5430"
+                                />
+                            </svg>
+                        </a>
+                    </div>
+                    <ul class="product_list">
+                        <button class="product_arrow product_arrow-left">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                            >
+                                <path
+                                    d="M14.9998 19.9201L8.47984 13.4001C7.70984 12.6301 7.70984 11.3701 8.47984 10.6001L14.9998 4.08008"
+                                    stroke="#FC5430"
+                                    stroke-width="1.5"
+                                    stroke-miterlimit="10"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+                        </button>
+                        <button class="product_arrow product_arrow-right">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                            >
+                                <path
+                                    d="M8.91016 19.9201L15.4302 13.4001C16.2002 12.6301 16.2002 11.3701 15.4302 10.6001L8.91016 4.08008"
+                                    stroke="#FC5430"
+                                    stroke-width="1.5"
+                                    stroke-miterlimit="10"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+                        </button>
+                        <!-- product item 01 -->
+                        <li class="product_item">
+                            <figure class="product_img-wrap">
+                                <img
+                                    src="./imgs/home/product_imgs/product-img01.png"
+                                    alt="product_img"
+                                    class="product_img"
+                                />
+                            </figure>
+                            <div class="product_content">
+                                <h3
+                                    class="product_name pc-text-base medium_20 clamp-lines"
+                                >
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Reprehenderit qui, odit,
+                                    fuga consectetur dignissimos molestias porro
+                                    dolores fugiat suscipit eius totam,
+                                    exercitationem minus voluptatem! Est qui
+                                    quaerat eos aliquam saepe!
+                                </h3>
+                                <a href="#" class="product_item-cta">
+                                    <p
+                                        class="product_item-cta-txt pc-text-10 regular_14"
+                                    >
+                                        Xem thông tin
+                                    </p>
+                                    <svg
+                                        width="16"
+                                        height="16"
+                                        viewBox="0 0 16 16"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M5.94023 13.78C5.81356 13.78 5.68689 13.7333 5.58689 13.6333C5.39356 13.44 5.39356 13.12 5.58689 12.9267L9.93356 8.58001C10.2536 8.26001 10.2536 7.74001 9.93356 7.42001L5.58689 3.07335C5.39356 2.88001 5.39356 2.56001 5.58689 2.36668C5.78023 2.17335 6.10023 2.17335 6.29356 2.36668L10.6402 6.71335C10.9802 7.05335 11.1736 7.51335 11.1736 8.00001C11.1736 8.48668 10.9869 8.94668 10.6402 9.28668L6.29356 13.6333C6.19356 13.7267 6.06689 13.78 5.94023 13.78Z"
+                                            fill="#1A1A1A"
+                                        />
+                                    </svg>
+                                </a>
+                            </div>
+                        </li>
+                        <!-- product item 02 -->
+                        <li class="product_item">
+                            <figure class="product_img-wrap">
+                                <img
+                                    src="./imgs/home/product_imgs/product-img02.png"
+                                    alt="product_img"
+                                    class="product_img"
+                                />
+                            </figure>
+                            <div class="product_content">
+                                <h3
+                                    class="product_name pc-text-base medium_20 clamp-lines"
+                                >
+                                    In Kẹp File
+                                </h3>
+                                <a href="#" class="product_item-cta">
+                                    <p
+                                        class="product_item-cta-txt pc-text-10 regular_14"
+                                    >
+                                        Xem thông tin
+                                    </p>
+                                    <svg
+                                        width="16"
+                                        height="16"
+                                        viewBox="0 0 16 16"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M5.94023 13.78C5.81356 13.78 5.68689 13.7333 5.58689 13.6333C5.39356 13.44 5.39356 13.12 5.58689 12.9267L9.93356 8.58001C10.2536 8.26001 10.2536 7.74001 9.93356 7.42001L5.58689 3.07335C5.39356 2.88001 5.39356 2.56001 5.58689 2.36668C5.78023 2.17335 6.10023 2.17335 6.29356 2.36668L10.6402 6.71335C10.9802 7.05335 11.1736 7.51335 11.1736 8.00001C11.1736 8.48668 10.9869 8.94668 10.6402 9.28668L6.29356 13.6333C6.19356 13.7267 6.06689 13.78 5.94023 13.78Z"
+                                            fill="#1A1A1A"
+                                        />
+                                    </svg>
+                                </a>
+                            </div>
+                        </li>
+                        <!-- product item 03 -->
+                        <li class="product_item">
+                            <figure class="product_img-wrap">
+                                <img
+                                    src="./imgs/home/product_imgs/product-img03.png"
+                                    alt="product_img"
+                                    class="product_img"
+                                />
+                            </figure>
+                            <div class="product_content">
+                                <h3
+                                    class="product_name pc-text-base medium_20 clamp-lines"
+                                >
+                                    In Hộp Cứng
+                                </h3>
+                                <a href="#" class="product_item-cta">
+                                    <p
+                                        class="product_item-cta-txt pc-text-10 regular_14"
+                                    >
+                                        Xem thông tin
+                                    </p>
+                                    <svg
+                                        width="16"
+                                        height="16"
+                                        viewBox="0 0 16 16"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M5.94023 13.78C5.81356 13.78 5.68689 13.7333 5.58689 13.6333C5.39356 13.44 5.39356 13.12 5.58689 12.9267L9.93356 8.58001C10.2536 8.26001 10.2536 7.74001 9.93356 7.42001L5.58689 3.07335C5.39356 2.88001 5.39356 2.56001 5.58689 2.36668C5.78023 2.17335 6.10023 2.17335 6.29356 2.36668L10.6402 6.71335C10.9802 7.05335 11.1736 7.51335 11.1736 8.00001C11.1736 8.48668 10.9869 8.94668 10.6402 9.28668L6.29356 13.6333C6.19356 13.7267 6.06689 13.78 5.94023 13.78Z"
+                                            fill="#1A1A1A"
+                                        />
+                                    </svg>
+                                </a>
+                            </div>
+                        </li>
+                        <!-- product item 04 -->
+                        <li class="product_item">
+                            <figure class="product_img-wrap">
+                                <img
+                                    src="./imgs/home/product_imgs/product-img04.png"
+                                    alt="product_img"
+                                    class="product_img"
+                                />
+                            </figure>
+                            <div class="product_content">
+                                <h3
+                                    class="product_name pc-text-base medium_20 clamp-lines"
+                                >
+                                    Sổ Bìa, Sách Vở
+                                </h3>
+                                <a href="#" class="product_item-cta">
+                                    <p
+                                        class="product_item-cta-txt pc-text-10 regular_14"
+                                    >
+                                        Xem thông tin
+                                    </p>
+                                    <svg
+                                        width="16"
+                                        height="16"
+                                        viewBox="0 0 16 16"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M5.94023 13.78C5.81356 13.78 5.68689 13.7333 5.58689 13.6333C5.39356 13.44 5.39356 13.12 5.58689 12.9267L9.93356 8.58001C10.2536 8.26001 10.2536 7.74001 9.93356 7.42001L5.58689 3.07335C5.39356 2.88001 5.39356 2.56001 5.58689 2.36668C5.78023 2.17335 6.10023 2.17335 6.29356 2.36668L10.6402 6.71335C10.9802 7.05335 11.1736 7.51335 11.1736 8.00001C11.1736 8.48668 10.9869 8.94668 10.6402 9.28668L6.29356 13.6333C6.19356 13.7267 6.06689 13.78 5.94023 13.78Z"
+                                            fill="#1A1A1A"
+                                        />
+                                    </svg>
+                                </a>
+                            </div>
+                        </li>
+                        <!-- product item 05 -->
+                        <li class="product_item">
+                            <figure class="product_img-wrap">
+                                <img
+                                    src="./imgs/home/product_imgs/product-img05.png"
+                                    alt="product_img"
+                                    class="product_img"
+                                />
+                            </figure>
+                            <div class="product_content">
+                                <h3
+                                    class="product_name pc-text-base medium_20 clamp-lines"
+                                >
+                                    In Tem Nhãn, Tem Decal
+                                </h3>
+                                <a href="#" class="product_item-cta">
+                                    <p
+                                        class="product_item-cta-txt pc-text-10 regular_14"
+                                    >
+                                        Xem thông tin
+                                    </p>
+                                    <svg
+                                        width="16"
+                                        height="16"
+                                        viewBox="0 0 16 16"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M5.94023 13.78C5.81356 13.78 5.68689 13.7333 5.58689 13.6333C5.39356 13.44 5.39356 13.12 5.58689 12.9267L9.93356 8.58001C10.2536 8.26001 10.2536 7.74001 9.93356 7.42001L5.58689 3.07335C5.39356 2.88001 5.39356 2.56001 5.58689 2.36668C5.78023 2.17335 6.10023 2.17335 6.29356 2.36668L10.6402 6.71335C10.9802 7.05335 11.1736 7.51335 11.1736 8.00001C11.1736 8.48668 10.9869 8.94668 10.6402 9.28668L6.29356 13.6333C6.19356 13.7267 6.06689 13.78 5.94023 13.78Z"
+                                            fill="#1A1A1A"
+                                        />
+                                    </svg>
+                                </a>
+                            </div>
+                        </li>
+                        <!-- product item 06 -->
+                        <li class="product_item">
+                            <figure class="product_img-wrap">
+                                <img
+                                    src="./imgs/home/product_imgs/product-img06.png"
+                                    alt="product_img"
+                                    class="product_img"
+                                />
+                            </figure>
+                            <div class="product_content">
+                                <h3
+                                    class="product_name pc-text-base medium_20 clamp-lines"
+                                >
+                                    Tờ Rơi Nội Thất
+                                </h3>
+                                <a href="#" class="product_item-cta">
+                                    <p
+                                        class="product_item-cta-txt pc-text-10 regular_14"
+                                    >
+                                        Xem thông tin
+                                    </p>
+                                    <svg
+                                        width="16"
+                                        height="16"
+                                        viewBox="0 0 16 16"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M5.94023 13.78C5.81356 13.78 5.68689 13.7333 5.58689 13.6333C5.39356 13.44 5.39356 13.12 5.58689 12.9267L9.93356 8.58001C10.2536 8.26001 10.2536 7.74001 9.93356 7.42001L5.58689 3.07335C5.39356 2.88001 5.39356 2.56001 5.58689 2.36668C5.78023 2.17335 6.10023 2.17335 6.29356 2.36668L10.6402 6.71335C10.9802 7.05335 11.1736 7.51335 11.1736 8.00001C11.1736 8.48668 10.9869 8.94668 10.6402 9.28668L6.29356 13.6333C6.19356 13.7267 6.06689 13.78 5.94023 13.78Z"
+                                            fill="#1A1A1A"
+                                        />
+                                    </svg>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <!-- Feature -->
+            <section class="feature">
+                <div class="container">
+                    <div class="feature_top">
+                        <h2 class="feature_heading bold_24">ẤN PHẨM NỔI BẬT</h2>
+                        <p class="feature_title">Một thế giới đầy cảm hứng</p>
+                        <p class="feature_desc regular_16">
+                            Khám phá cách mới để tìm nguồn tờ rơi, thư mục, áp
+                            phích, danh thiếp, bưu thiếp, biểu ngữ, tờ rơi,
+                            sách, chữ ký và nhiều hơn nữa của chúng tôi.
+                        </p>
+                    </div>
+                    <div class="feature_bot">
+                        <div class="feature_left">
+                            <img src="./imgs/outstanding_printing.png" alt="" />
+                        </div>
+                        <div class="feature_right">
+                            <ul class="feature_list">
+                                <!-- feature item01 -->
+                                <li class="feature_item">
+                                    <figure class="feature_img-wrap">
+                                        <img
+                                            src="./imgs/home/feature_imgs/feature_img01.png"
+                                            alt="feature_img"
+                                            class="feature_img"
+                                        />
+                                    </figure>
+                                    <div class="feature_content">
+                                        <h3
+                                            class="feature_item-name clamp-lines regular_16"
+                                        >
+                                            Danh Thiếp
+                                        </h3>
+                                    </div>
+                                </li>
+                                <!-- feature item02 -->
+                                <li class="feature_item">
+                                    <figure class="feature_img-wrap">
+                                        <img
+                                            src="./imgs/home/feature_imgs/feature_img02.png"
+                                            alt="feature_img"
+                                            class="feature_img"
+                                        />
+                                    </figure>
+                                    <div class="feature_content">
+                                        <h3
+                                            class="feature_item-name clamp-lines regular_16"
+                                        >
+                                            Poster chất liệu PP
+                                        </h3>
+                                    </div>
+                                </li>
+                                <!-- feature item03 -->
+                                <li class="feature_item">
+                                    <figure class="feature_img-wrap">
+                                        <img
+                                            src="./imgs/home/feature_imgs/feature_img03.png"
+                                            alt="feature_img"
+                                            class="feature_img"
+                                        />
+                                    </figure>
+                                    <div class="feature_content">
+                                        <h3
+                                            class="feature_item-name clamp-lines regular_16"
+                                        >
+                                            Nhãn decal giấy
+                                        </h3>
+                                    </div>
+                                </li>
+                                <!-- feature item04 -->
+                                <li class="feature_item">
+                                    <figure class="feature_img-wrap">
+                                        <img
+                                            src="./imgs/home/feature_imgs/feature_img04.png"
+                                            alt="feature_img"
+                                            class="feature_img"
+                                        />
+                                    </figure>
+                                    <div class="feature_content">
+                                        <h3
+                                            class="feature_item-name clamp-lines regular_16"
+                                        >
+                                            Decal khổ lớn
+                                        </h3>
+                                    </div>
+                                </li>
+                                <!-- feature item05 -->
+                                <li class="feature_item">
+                                    <figure class="feature_img-wrap">
+                                        <img
+                                            src="./imgs/home/feature_imgs/feature_img05.png"
+                                            alt="feature_img"
+                                            class="feature_img"
+                                        />
+                                    </figure>
+                                    <div class="feature_content">
+                                        <h3
+                                            class="feature_item-name clamp-lines regular_16"
+                                        >
+                                            Túi giấy
+                                        </h3>
+                                    </div>
+                                </li>
+                                <!-- feature item06 -->
+                                <li class="feature_item">
+                                    <figure class="feature_img-wrap">
+                                        <img
+                                            src="./imgs/home/feature_imgs/feature_img06.png"
+                                            alt="feature_img"
+                                            class="feature_img"
+                                        />
+                                    </figure>
+                                    <div class="feature_content">
+                                        <h3
+                                            class="feature_item-name clamp-lines regular_16"
+                                        >
+                                            Hashtag cầm tay
+                                        </h3>
+                                    </div>
+                                </li>
+                                <!-- feature item07 -->
+                                <li class="feature_item">
+                                    <figure class="feature_img-wrap">
+                                        <img
+                                            src="./imgs/home/feature_imgs/feature_img07.png"
+                                            alt="feature_img"
+                                            class="feature_img"
+                                        />
+                                    </figure>
+                                    <div class="feature_content">
+                                        <h3
+                                            class="feature_item-name clamp-lines regular_16"
+                                        >
+                                            Danh Thiếp
+                                        </h3>
+                                    </div>
+                                </li>
+                                <!-- feature item08 -->
+                                <li class="feature_item">
+                                    <figure class="feature_img-wrap">
+                                        <img
+                                            src="./imgs/home/feature_imgs/feature_img08.png"
+                                            alt="feature_img"
+                                            class="feature_img"
+                                        />
+                                    </figure>
+                                    <div class="feature_content">
+                                        <h3
+                                            class="feature_item-name clamp-lines regular_16"
+                                        >
+                                            Hashtag cầm tay
+                                        </h3>
+                                    </div>
+                                </li>
+                                <!-- feature item09 -->
+                                <li class="feature_item">
+                                    <figure class="feature_img-wrap">
+                                        <img
+                                            src="./imgs/home/feature_imgs/feature_img09.png"
+                                            alt="feature_img"
+                                            class="feature_img"
+                                        />
+                                    </figure>
+                                    <div class="feature_content">
+                                        <h3
+                                            class="feature_item-name clamp-lines regular_16"
+                                        >
+                                            Catalogue
+                                        </h3>
+                                    </div>
+                                </li>
+                                <!-- feature item10 -->
+                                <li class="feature_item">
+                                    <figure class="feature_img-wrap">
+                                        <img
+                                            src="./imgs/home/feature_imgs/feature_img10.png"
+                                            alt="feature_img"
+                                            class="feature_img"
+                                        />
+                                    </figure>
+                                    <div class="feature_content">
+                                        <h3
+                                            class="feature_item-name clamp-lines regular_16"
+                                        >
+                                            Hộp giấy mỹ thuật
+                                        </h3>
+                                    </div>
+                                </li>
+                                <!-- feature item11 -->
+                                <li class="feature_item">
+                                    <figure class="feature_img-wrap">
+                                        <img
+                                            src="./imgs/home/feature_imgs/feature_img11.png"
+                                            alt="feature_img"
+                                            class="feature_img"
+                                        />
+                                    </figure>
+                                    <div class="feature_content">
+                                        <h3
+                                            class="feature_item-name clamp-lines regular_16"
+                                        >
+                                            Tranh canvas
+                                        </h3>
+                                    </div>
+                                </li>
+                                <!-- feature item12 -->
+                                <li class="feature_item">
+                                    <figure class="feature_img-wrap">
+                                        <img
+                                            src="./imgs/home/feature_imgs/feature_img12.png"
+                                            alt="feature_img"
+                                            class="feature_img"
+                                        />
+                                    </figure>
+                                    <div class="feature_content">
+                                        <h3
+                                            class="feature_item-name clamp-lines regular_16"
+                                        >
+                                            Giấy ghi chú
+                                        </h3>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About -->
+            <section class="about">
+                <div class="container">
+                    <div class="about_top">
+                        <figure class="about_decor-01">
+                            <img
+                                src="./imgs/home/about_imgs/about-decor-01.svg"
+                                alt="about-decor-01"
+                            />
+                        </figure>
+                        <div class="about_brand">
+                            <img
+                                src="./imgs/home/about_imgs/about_brand01.svg"
+                                alt="about brand img"
+                                class="about_brand-img"
+                            />
+                            <img
+                                src="./imgs/home/about_imgs/about_brand02.svg"
+                                alt="about brand img"
+                                class="about_brand-img"
+                            />
+                            <img
+                                src="./imgs/home/about_imgs/about_brand03.svg"
+                                alt="about brand img"
+                                class="about_brand-img"
+                            />
+                            <img
+                                src="./imgs/home/about_imgs/about_brand04.svg"
+                                alt="about brand img"
+                                class="about_brand-img"
+                            />
+                            <img
+                                src="./imgs/home/about_imgs/about_brand05.svg"
+                                alt="about brand img"
+                                class="about_brand-img"
+                            />
+                            <img
+                                src="./imgs/home/about_imgs/about_brand06.svg"
+                                alt="about brand img"
+                                class="about_brand-img"
+                            />
+                        </div>
+                    </div>
+                    <div class="about_bot">
+                        <figure
+                            class="about-decor-02 about_decor-02--left hide-mb"
+                        >
+                            <img
+                                src="./imgs/home/about_imgs/about-decor-02.svg"
+                                alt="about-decor-02"
+                            />
+                        </figure>
+                        <figure
+                            class="about-decor-02 about_decor-02--right hide-mb"
+                        >
+                            <img
+                                src="./imgs/home/about_imgs/about-decor-02.svg"
+                                alt="about-decor-02"
+                            />
+                        </figure>
+                        <figure class="about-decor-03 hide-mb">
+                            <img
+                                src="./imgs/home/about_imgs/about-decor-03.svg"
+                                alt="about-decor-03"
+                            />
+                        </figure>
+                        <div class="about_content">
+                            <div class="about_conent-top">
+                                <img
+                                    src="./imgs/icons/magic-star.svg"
+                                    alt="about icon"
+                                />
+                                <h2 class="about_heading">CHÚNG TÔI LÀM GÌ?</h2>
+                            </div>
+                            <p class="about_title mb-text-">
+                                Chúng tôi làm hài lòng bạn bằng những sản phẩm
+                                có giá trị tốt nhất
+                            </p>
+                            <p class="about_desc regular_16">
+                                không ngừng sáng tạo cùng hàng trăm doanh nghiệp
+                                xây dựng thành công các thương hiệu, sản phẩm có
+                                được uy tín lớn trên thị trường trong nước và
+                                quốc tế
+                            </p>
+                        </div>
+                        <ul class="about_list">
+                            <!-- About item01 -->
+                            <li class="about_item">
+                                <figure class="about_item-img-wrap">
+                                    <img
+                                        src="./imgs/home/about_imgs/about_item-img01.png"
+                                        alt="about_item-img"
+                                        class="about_item-img"
+                                    />
+                                </figure>
+                                <p
+                                    class="about_item-title clamp-lines medium_20"
+                                >
+                                    Thiết bị hiện đại
+                                </p>
+                                <p
+                                    class="about_item-desc clamp-lines regular_14"
+                                >
+                                    Trang bị thiết bị máy móc hiện đại để đảm
+                                    bảo chất lượng đầu ra của sản phẩm.
+                                </p>
+                            </li>
+                            <!-- About item02 -->
+                            <li class="about_item">
+                                <figure class="about_item-img-wrap">
+                                    <img
+                                        src="./imgs/home/about_imgs/about_item-img02.png"
+                                        alt="about_item-img"
+                                        class="about_item-img"
+                                    />
+                                </figure>
+                                <p
+                                    class="about_item-title clamp-lines medium_20"
+                                >
+                                    Uy tín
+                                </p>
+                                <p
+                                    class="about_item-desc clamp-lines regular_14"
+                                >
+                                    Trang bị thiết bị máy móc hiện đại để mang
+                                    lại sản phẩm đầu ra tốt nhất đến khách hàng.
+                                </p>
+                            </li>
+                            <!-- About item03 -->
+                            <li class="about_item">
+                                <figure class="about_item-img-wrap">
+                                    <img
+                                        src="./imgs/home/about_imgs/about_item-img03.png"
+                                        alt="about_item-img"
+                                        class="about_item-img"
+                                    />
+                                </figure>
+                                <p
+                                    class="about_item-title clamp-lines medium_20"
+                                >
+                                    Chất lượng
+                                </p>
+                                <p
+                                    class="about_item-desc clamp-lines regular_14"
+                                >
+                                    Không ngừng sáng tạo, đáp ứng sản phẩm chất
+                                    lượng tốt nhất đến quý khách hàng.
+                                </p>
+                            </li>
+                            <!-- About item04 -->
+                            <li class="about_item">
+                                <figure class="about_item-img-wrap">
+                                    <img
+                                        src="./imgs/home/about_imgs/about_item-img04.png"
+                                        alt="about_item-img"
+                                        class="about_item-img"
+                                    />
+                                </figure>
+                                <p
+                                    class="about_item-title clamp-lines medium_20"
+                                >
+                                    Trách nhiệm
+                                </p>
+                                <p
+                                    class="about_item-desc clamp-lines regular_14"
+                                >
+                                    Đặt trách nhiệm lên hàng đầu để đáp lại sự
+                                    tin yêu từ khách hàng
+                                </p>
+                            </li>
+                            <!-- About item05 -->
+                            <li class="about_item">
+                                <figure class="about_item-img-wrap">
+                                    <img
+                                        src="./imgs/home/about_imgs/about_item-img05.png"
+                                        alt="about_item-img"
+                                        class="about_item-img"
+                                    />
+                                </figure>
+                                <p
+                                    class="about_item-title clamp-lines medium_20"
+                                >
+                                    Chuyên nghiệp
+                                </p>
+                                <p
+                                    class="about_item-desc clamp-lines regular_14"
+                                >
+                                    Bồi dưỡng nâng cao năng lực nhân viên, đáp
+                                    ứng mọi yêu cầu của quý khách hàng.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="about_wrap hide-mb">
+                    <figure class="about_decor-bg">
+                        <img
+                            src="./imgs/home/about_imgs/about-decor-bg.svg"
+                            alt="about-decor-bg"
+                        />
+                    </figure>
+                </div>
+            </section>
+            <!-- Review -->
+            <section class="review">
+                <div class="review-decor-wrap">
+                    <img
+                        src="./imgs/home/review_imgs/review-decor-01.svg"
+                        alt="review-decor"
+                        class="review-decor-img"
+                    />
+                </div>
+                <div class="container">
+                    <div class="review_top">
+                        <div class="review_line"></div>
+                        <h2
+                            class="review_heading regular_32 text-2xl mb-text-3xl"
+                        >
+                            SỰ TIN TƯỞNG TỪ KHÁCH HÀNG
+                        </h2>
+                        <div class="review_line"></div>
+                    </div>
+                    <div class="review_bot">
+                        <button class="review_arrow review_arrow--left">
+                            <svg
+                                width="32"
+                                height="32"
+                                viewBox="0 0 32 32"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M20 27.56C19.7467 27.56 19.4934 27.4667 19.2934 27.2667L10.6 18.5734C9.18671 17.16 9.18671 14.84 10.6 13.4267L19.2934 4.73336C19.68 4.34669 20.32 4.34669 20.7067 4.73336C21.0934 5.12003 21.0934 5.76003 20.7067 6.14669L12.0134 14.84C11.3734 15.48 11.3734 16.52 12.0134 17.16L20.7067 25.8534C21.0934 26.24 21.0934 26.88 20.7067 27.2667C20.5067 27.4534 20.2534 27.56 20 27.56Z"
+                                    fill="#1A1A1A"
+                                />
+                            </svg>
+                        </button>
+                        <ul class="review_list">
+                            <li class="review_item">
+                                <figure class="review_avt">
+                                    <img
+                                        src="./imgs/home/review_imgs/review-avt-01.png"
+                                        alt="review-avt"
+                                        class="review_avt-img"
+                                    />
+                                </figure>
+                                <div class="review_content">
+                                    <div class="review_content-top">
+                                        <div class="review_info">
+                                            <h4
+                                                class="review_name clamp-lines medium_16"
+                                            >
+                                                Nguyễn Trung Định
+                                            </h4>
+                                            <p
+                                                class="review_job clamp-lines regular_12"
+                                            >
+                                                Giám đốc Marketing
+                                            </p>
+                                        </div>
+                                        <img
+                                            src="./imgs/home/review_imgs/review-stars.svg"
+                                            alt="review-star"
+                                        />
+                                    </div>
+                                    <p class="review_desc clamp-lines">
+                                        Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit. Ut numquam, quae
+                                        perspiciatis iure dolor quis veritatis
+                                        iusto minus quasi unde tenetur rem
+                                        repudiandae placeat atque consequuntur,
+                                        molestias animi ipsum veniam. Lorem
+                                        ipsum dolor sit amet consectetur
+                                        adipisicing elit. Ut numquam, quae
+                                        perspiciatis iure dolor quis veritatis
+                                        iusto minus quasi unde tenetur rem
+                                        repudiandae placeat atque consequuntur,
+                                        molestias animi ipsum veniam.
+                                    </p>
+                                </div>
+                            </li>
+                            <div class="review-decor-bot"></div>
+                            <div class="review-decor-top"></div>
+                        </ul>
+                        <button class="review_arrow review_arrow--right">
+                            <svg
+                                width="32"
+                                height="32"
+                                viewBox="0 0 32 32"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M20 27.56C19.7467 27.56 19.4934 27.4667 19.2934 27.2667L10.6 18.5734C9.18671 17.16 9.18671 14.84 10.6 13.4267L19.2934 4.73336C19.68 4.34669 20.32 4.34669 20.7067 4.73336C21.0934 5.12003 21.0934 5.76003 20.7067 6.14669L12.0134 14.84C11.3734 15.48 11.3734 16.52 12.0134 17.16L20.7067 25.8534C21.0934 26.24 21.0934 26.88 20.7067 27.2667C20.5067 27.4534 20.2534 27.56 20 27.56Z"
+                                    fill="#1A1A1A"
+                                />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <!-- Blog -->
+            <section class="blog">
+                <div class="container">
+                    <div class="blog_top">
+                        <div class="about_conent-top">
+                            <img
+                                src="./imgs/icons/magic-star.svg"
+                                alt="about icon"
+                            />
+                            <h2 class="about_heading">HÔM NAY CÓ GÌ MỚI?</h2>
+                        </div>
+                        <p class="blog_title">Bài viết tin tức, chuyên môn</p>
+                    </div>
+                    <ul class="blog_list">
+                        <li class="blog_item">
+                            <ul class="blog_item-news">
+                                <!-- item01 -->
+                                <li class="blog_item-news-item">
+                                    <img
+                                        src="./imgs/home/blog_imgs/blog-img-01.png"
+                                        alt="blog_item-news-img"
+                                        class="blog_item-news-img"
+                                    />
+
+                                    <div class="blog_item-news-content">
+                                        <h3
+                                            class="blog_item-news-title clamp-lines bold_20"
+                                        >
+                                            3 Xu Hướng Degital Marketing đỉnh
+                                            cao trong năm 2024
+                                        </h3>
+                                        <p
+                                            class="blog_item-news-date regular_12"
+                                        >
+                                            08/2024
+                                        </p>
+                                        <p
+                                            class="blog_item-news-desc regular_14 clamp-lines"
+                                        >
+                                            Những khái niệm này chắc hẳn đã xuất
+                                            hiện nhan nhản trên các trang tin
+                                            tức online. Thế nhưng có bao nhiêu
+                                            doanh nghiệp thực sự hiểu và áp dụng
+                                            triệt để được trong digital
+                                            marketing? Hãy cùng AIM tìm hiểu bản
+                                            chất của 3 trong số những xu hướng
+                                            quan trọng mà bất kỳ doanh nghiệp
+                                            nào xác định digital là cốt lõi
+                                            trong hoạt động marketing đều nên
+                                            triển khai.
+                                        </p>
+                                    </div>
+                                </li>
+                                <!-- item02 -->
+                                <li class="blog_item-news-item">
+                                    <img
+                                        src="./imgs/home/blog_imgs/blog-img-02.png"
+                                        alt="blog_item-news-img"
+                                        class="blog_item-news-img"
+                                    />
+
+                                    <div class="blog_item-news-content">
+                                        <h3
+                                            class="blog_item-news-title clamp-lines bold_20"
+                                        >
+                                            7 bước xây dựng thương hiệu cho
+                                            doanh nghiệp nhỏ và startup
+                                        </h3>
+                                        <p
+                                            class="blog_item-news-date regular_12"
+                                        >
+                                            08/2024
+                                        </p>
+                                        <p
+                                            class="blog_item-news-desc regular_14 clamp-lines"
+                                        >
+                                            Doanh nghiệp nhỏ lo bán hàng tốt là
+                                            được, làm thương hiệu để mai tính?
+                                            Thực tế thì xây dựng thương hiệu
+                                            không chỉ là câu chuyện dành cho các
+                                            “ông bự”, và cũng không quá vĩ mô
+                                            ngoài tầm với. Đã có nhiều thương
+                                            hiệu nhỏ với ngân sách khiêm tốt vẫn
+                                            xây dựng được một nền tảng nhận diện
+                                            thương hiệu thành công. 
+                                        </p>
+                                    </div>
+                                </li>
+                                <!-- item03 -->
+                                <li class="blog_item-news-item">
+                                    <img
+                                        src="./imgs/home/blog_imgs/blog-img-03.png"
+                                        alt="blog_item-news-img"
+                                        class="blog_item-news-img"
+                                    />
+
+                                    <div class="blog_item-news-content">
+                                        <h3
+                                            class="blog_item-news-title clamp-lines bold_20"
+                                        >
+                                            Tận dụng sàn thương mại điện tử để
+                                            xây dựng thương hiệu
+                                        </h3>
+                                        <p
+                                            class="blog_item-news-date regular_12"
+                                        >
+                                            08/2024
+                                        </p>
+                                        <p
+                                            class="blog_item-news-desc regular_14 clamp-lines"
+                                        >
+                                            Sự phát triển thần tốc của thương
+                                            mại điện tử (TMĐT) đã thay đổi cục
+                                            diện của toàn thị trường. Nó đã thúc
+                                            đẩy người tiêu dùng ra quyết định
+                                            mua hàng nhanh hơn, quá trình mua
+                                            tiện lợi hơn và người bán dễ dàng có
+                                            lượng khách cao với chi phí vận hành
+                                            thấp, được hỗ trợ các chương trình
+                                            khuyến mãi nhằm thu hút khách hàng
+                                            đến các gian hàng.
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="dots">
+                        <li class="dot_item is-active"></li>
+                        <li class="dot_item"></li>
+                        <li class="dot_item"></li>
+                        <li class="dot_item"></li>
+                    </ul>
+                    <a href="#" class="blog-cta">
+                        <p class="blog-cta-txt regular_16">Xem bài viết</p>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="25"
+                            height="24"
+                            viewBox="0 0 25 24"
+                            fill="none"
+                        >
+                            <path
+                                d="M14.9302 5.92999L21.0002 12L14.9302 18.07"
+                                stroke="#FFFBFA"
+                                stroke-width="1.5"
+                                stroke-miterlimit="10"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                            <path
+                                d="M4 12H20.83"
+                                stroke="#FFFBFA"
+                                stroke-width="1.5"
+                                stroke-miterlimit="10"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                    </a>
+                </div>
+                <img
+                    src="./imgs/home/blog_imgs/blog-decor-top.svg"
+                    alt="blog-decor"
+                    class="blog_decor-top hide-tablet"
+                />
+                <img
+                    src="./imgs/home/blog_imgs/blog-decor-bot.svg"
+                    alt="blog-decor"
+                    class="blog_decor-bot"
+                />
+            </section>
+        </main>
+
+        <footer
+            style="background-image: url(./imgs/footer-bg.svg)"
+            id="footer"
+            class="footer"
+        >
             <div class="container">
                 <div class="footer_top">
                     <div class="footer_brand">
                         <h4 class="footer_title">VỀ CHÚNG TÔI</h4>
                         <div class="brand_info">
-                            <span>IN NHẬT QUANG</span>
-                            <span>CTY TNHH MTV THẾ GIỚI IN ẤN</span>
-                            <span>Since 2001</span>
+                            <div class="footer_logo">
+                                <img src="./imgs/logo-footer.png" alt="" />
+                            </div>
+                            <div class="footer_info">
+                                <span>IN NHẬT QUANG</span>
+                                <span>CTY TNHH MTV THẾ GIỚI IN ẤN</span>
+                                <span>Since 2001</span>
+                            </div>
                         </div>
+
+                        <h4 class="footer_title">THƯƠNG HIỆU TRỰC THUỘC</h4>
                         <div class="brand_imgs">
                             <div class="brand_img">
                                 <img src="./imgs/brand.jpg" alt="" />
                             </div>
                         </div>
                         <div class="brand_link">
-                            <a href="#">
-                                <span>Giới thiệu</span>
-                            </a>
-                            <a href="#">
-                                <span>Đội ngũ</span>
-                            </a>
-                            <a href="#">
-                                <span>Tuyển dụng</span>
-                            </a>
-                            <a href="#">
-                                <span>Liên hệ </span>
-                            </a>
+                            <ul>
+                                <li>
+                                    <a href="#"> Giới thiệu </a>
+                                </li>
+                                <li>
+                                    <a href="#"> Đội ngũ </a>
+                                </li>
+                                <li>
+                                    <a href="#"> Tuyển dụng </a>
+                                </li>
+                                <li>
+                                    <a href="#"> Liên hệ </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="footer_advise">
-                        <div class="advise_top">
-                            <h4 class="footer_title">TƯ VẤN & BÁO GIÁ</h4>
-                            <div class="advise_staffs">
-                                <div class="advise_staff">
-                                    <div class="advise_staff_img">
-                                        <img
-                                            src="./imgs/Icon_of_Zalo.svg.webp"
-                                            alt=""
-                                        />
-                                    </div>
-                                    <div class="advise_staff_info">
-                                        <div class="staff_info_name">
-                                            NV Phương Duy
+                    <div class="footer_advise_center">
+                        <div class="footer_advise_center_wrap">
+                            <div class="footer_advise">
+                                <div class="advise_top">
+                                    <h4 class="footer_title">
+                                        TƯ VẤN & BÁO GIÁ
+                                    </h4>
+                                    <div class="advise_staffs">
+                                        <div class="advise_staff">
+                                            <div class="advise_staff_img">
+                                                <img
+                                                    src="./imgs/zalo.png"
+                                                    alt=""
+                                                />
+                                            </div>
+                                            <div class="advise_staff_info">
+                                                <div class="staff_info_name">
+                                                    NV Phương Duy
+                                                </div>
+                                                <div class="staff_info_phone">
+                                                    0868.331.111
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="staff_info_phone">
-                                            0868331111
+                                        <div class="advise_staff">
+                                            <div class="advise_staff_img">
+                                                <img
+                                                    src="./imgs/zalo.png"
+                                                    alt=""
+                                                />
+                                            </div>
+                                            <div class="advise_staff_info">
+                                                <div class="staff_info_name">
+                                                    NV Hào Quang
+                                                </div>
+                                                <div class="staff_info_phone">
+                                                    0985.111.085
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="advise_staff">
+                                            <div class="advise_staff_img">
+                                                <img
+                                                    src="./imgs/zalo.png"
+                                                    alt=""
+                                                />
+                                            </div>
+                                            <div class="advise_staff_info">
+                                                <div class="staff_info_name">
+                                                    NV Mạnh Bảo
+                                                </div>
+                                                <div class="staff_info_phone">
+                                                    0913.939.226
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="advise_staff">
+                                            <div class="advise_staff_img">
+                                                <img
+                                                    src="./imgs/zalo.png"
+                                                    alt=""
+                                                />
+                                            </div>
+                                            <div class="advise_staff_info">
+                                                <div class="staff_info_name">
+                                                    NV Trình Nguyễn
+                                                </div>
+                                                <div class="staff_info_phone">
+                                                    0985.297.011
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="advise_staff">
+                                            <div class="advise_staff_img">
+                                                <img
+                                                    src="./imgs/zalo.png"
+                                                    alt=""
+                                                />
+                                            </div>
+                                            <div class="advise_staff_info">
+                                                <div class="staff_info_name">
+                                                    NV Tài Phạm
+                                                </div>
+                                                <div class="staff_info_phone">
+                                                    0913.509.018
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="advise_staff">
+                                            <div class="advise_staff_img">
+                                                <img
+                                                    src="./imgs/zalo.png"
+                                                    alt=""
+                                                />
+                                            </div>
+                                            <div class="advise_staff_info">
+                                                <div class="staff_info_name">
+                                                    NV Đào Hương
+                                                </div>
+                                                <div class="staff_info_phone">
+                                                    0866.191.933
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="advise_staff">
-                                    <div class="advise_staff_img">
-                                        <img
-                                            src="./imgs/Icon_of_Zalo.svg.webp"
-                                            alt=""
-                                        />
-                                    </div>
-                                    <div class="advise_staff_info">
-                                        <div class="staff_info_name">
-                                            NV Hào Quang
-                                        </div>
-                                        <div class="staff_info_phone">
-                                            0985111085
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="advise_staff">
-                                    <div class="advise_staff_img">
-                                        <img
-                                            src="./imgs/Icon_of_Zalo.svg.webp"
-                                            alt=""
-                                        />
-                                    </div>
-                                    <div class="advise_staff_info">
-                                        <div class="staff_info_name">
-                                            NV Mạnh Bảo
-                                        </div>
-                                        <div class="staff_info_phone">
-                                            0913939226
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="advise_staff">
-                                    <div class="advise_staff_img">
-                                        <img
-                                            src="./imgs/Icon_of_Zalo.svg.webp"
-                                            alt=""
-                                        />
-                                    </div>
-                                    <div class="advise_staff_info">
-                                        <div class="staff_info_name">
-                                            NV Trình Nguyễn
-                                        </div>
-                                        <div class="staff_info_phone">
-                                            0985297011
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="advise_staff">
-                                    <div class="advise_staff_img">
-                                        <img
-                                            src="./imgs/Icon_of_Zalo.svg.webp"
-                                            alt=""
-                                        />
-                                    </div>
-                                    <div class="advise_staff_info">
-                                        <div class="staff_info_name">
-                                            NV Tài Phạm
-                                        </div>
-                                        <div class="staff_info_phone">
-                                            0913509018
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="advise_staff">
-                                    <div class="advise_staff_img">
-                                        <img
-                                            src="./imgs/Icon_of_Zalo.svg.webp"
-                                            alt=""
-                                        />
-                                    </div>
-                                    <div class="advise_staff_info">
-                                        <div class="staff_info_name">
-                                            NV Đào Hương
-                                        </div>
-                                        <div class="staff_info_phone">
-                                            0866191933
-                                        </div>
-                                    </div>
+                            </div>
+                            <div class="footer_centers">
+                                <div>
+                                    <h4 class="footer_title">
+                                        TRUNG TÂM KHÁCH HÀNG
+                                    </h4>
+                                    <ul class="footer_center">
+                                        <li>
+                                            <a href="#"> Hướng dẫn đặt hàng </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Hướng dẫn thanh toán
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Vận chuyển, giao hàng
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Chính sách bảo hành
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#"> Chính sách đổi trả </a>
+                                        </li>
+                                        <li>
+                                            <a href="#"> Thoả thuận sử dụng </a>
+                                        </li>
+                                        <li>
+                                            <a href="#"> Chính sách bảo mật </a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                         <div class="advise_bot">
                             <h4 class="footer_title">Hợp tác - Phản ánh</h4>
-                            <div class="footer_cooperate">
-                                <div class="cooperate_img">
-                                    <img src="./imgs/seo.jpg" alt="" />
+                            <div class="advise_bot_wrap">
+                                <div class="footer_cooperate">
+                                    <div class="cooperate_img">
+                                        <img src="./imgs/seo.jpg" alt="" />
+                                    </div>
+                                    <div class="cooperate_info">
+                                        <span>LIÊN HỆ NGAY GIÁM ĐỐC</span>
+                                        <span>PHẠM VĂN SƠ</span>
+                                        <span>0913.513.448</span>
+                                        <span
+                                            >Xem danh thiếp của tôi tại đây
+                                            <i class="bx bx-right-arrow-alt"></i
+                                        ></span>
+                                    </div>
                                 </div>
-                                <div class="cooperate_info">
-                                    <span>Phạm Văn Sơ: 0913513448 </span>
-                                    <span>Liên hệ ngay Giám đốc </span>
-                                    <span
-                                        >Xem danh thiếp của tôi tại đây
-                                        >>></span
-                                    >
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="footer_centers">
-                        <div>
-                            <h4 class="footer_title">TRUNG TÂM KHÁCH HÀNG</h4>
-                            <div class="footer_center">
-                                <a href="#">
-                                    <span>Hướng dẫn đặt hàng </span>
-                                </a>
-                                <a href="#">
-                                    <span>Hướng dẫn thanh toán</span>
-                                </a>
-                                <a href="#">
-                                    <span>Vận chuyển, giao hàng</span>
-                                </a>
-                                <a href="#">
-                                    <span>Chính sách bảo hành</span>
-                                </a>
-                                <a href="#">
-                                    <span>Chính sách đổi trả</span>
-                                </a>
-                                <a href="#">
-                                    <span>Thoả thuận sử dụng</span>
-                                </a>
-                                <a href="#">
-                                    <span>Chính sách bảo mật</span>
-                                </a>
+                                <p class="footer_cooperate_desc">
+                                    In Nhật Quang, thành lập từ năm 2001, là đơn
+                                    vị tiên phong trong lĩnh vực in ấn, cung cấp
+                                    các giải pháp in ấn chất lượng cao và đa
+                                    dạng, đáp ứng mọi nhu cầu của khách hàng với
+                                    sự chuyên nghiệp và uy tín.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -319,8 +1572,8 @@
                             <a href="#" class="payment_wrap">
                                 <div class="payment_item">
                                     <img
-                                        src="https://thegioiinan.com/static/images/payment.png"
-                                        alt=""
+                                        src="./imgs/payment.png"
+                                        alt="payment"
                                     />
                                 </div>
                             </a>
@@ -345,7 +1598,9 @@
                         </div>
                         <div>
                             <h4 class="footer_title">Fanpage</h4>
-                            <div id="fb-root"></div>
+                            <div class="footer_fb">
+                                <div id="fb-root"></div>
+                            </div>
                             <script
                                 async
                                 defer
@@ -372,10 +1627,10 @@
                             <img src="./imgs/bilding.jpg" alt="" />
                         </div>
                         <div>
-                            <p>
-                                VPGD:
+                            <div class="footer_address_desc">
+                                <span> VPGD:</span>
                                 <span> 104 Nguyễn Chí Thanh, Đống Đa</span>
-                            </p>
+                            </div>
                             <span> Hà Nội</span>
                         </div>
                     </div>
@@ -384,36 +1639,35 @@
                             <img src="./imgs/home.jpg" alt="" />
                         </div>
                         <div>
-                            <p>
-                                Xưởng in:
-                                <span>Lại Dụ, An Thượng, Hoài Đức</span>
-                            </p>
-                            <span>Hà Nội</span>
+                            <div class="footer_address_desc">
+                                <span> Xưởng in: </span>
+                                <span
+                                    >Lại Dụ, An Thượng, Hoài Đức <br />Hà
+                                    Nội</span
+                                >
+                            </div>
                         </div>
                     </div>
                     <div class="footer_social_wrap">
                         <div class="footer_socials">
                             <a title="facebook" class="footer_social">
-                                <img src="./imgs/facebook.png.webp" alt="" />
+                                <img src="./imgs/facebook.png" alt="" />
                             </a>
                             <a title="youtube" class="footer_social">
-                                <img src="./imgs/youtube.png.webp" alt="" />
+                                <img src="./imgs/youtube.png" alt="" />
                             </a>
                             <a title="tiktok" class="footer_social">
-                                <img src="./imgs/tiktok.png.webp" alt="" />
+                                <img src="./imgs/tiktok.png" alt="" />
                             </a>
                             <a title="lazada" class="footer_social">
-                                <img src="./imgs/lazada.png.webp" alt="" />
+                                <img src="./imgs/instagram.png" alt="" />
                             </a>
                             <a title="shopee" class="footer_social">
-                                <img src="./imgs/shopee.png.webp" alt="" />
+                                <img src="./imgs/massage.png" alt="" />
                             </a>
-                        </div>
-                        <div class="footer_contact">
-                            <a href="#">
-                                <span>Liên hệ ngay</span>
+                            <a title="shopee" class="footer_social">
+                                <img src="./imgs/zalo.png" alt="" />
                             </a>
-                            <i class="bx bx-chevron-right"></i>
                         </div>
                     </div>
                 </div>
@@ -543,13 +1797,14 @@
                     </div>
                 </div>
             </div>
-        </footer> -->
+        </footer>
         <script
             async
             defer
             crossorigin="anonymous"
             src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v15.0"
         ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.3.0/flickity.pkgd.min.js"></script>
         <script src="./app.js"></script>
     </body>
 </html>
