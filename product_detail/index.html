@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./style.css" />
+        <link
+            href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+            rel="stylesheet"
+        />
+        <title>Document</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.3.0/flickity.min.css"
+        />
+    </head>
+    <body>
+        <main class="product_detail_page">
+            <section class="breadcrumbs">
+                <div class="container">
+                    <div class="breadcrumbs_wrap">
+                        <div class="breadcrumbs_item">
+                            <img src="./product_imgs/home_orange.svg" alt="" />
+                            <p>Trang chủ</p>
+                        </div>
+                        <img src="./product_imgs/arrow_black.svg" alt="" />
+                        <div class="breadcrumbs_item">
+                            <p>Danh thiếp - Namecards</p>
+                        </div>
+                        <img src="./product_imgs/arrow_black.svg" alt="" />
+                        <div class="breadcrumbs_item">
+                            <p>Danh thiếp giấy mỹ thuật</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="product_details">
+                <div class="container">
+                    <div class="product_details_wrap">
+                        <div class="product_img">
+                            <img src="./product_imgs/product_demo.png" alt="" />
+                        </div>
+                        <div class="product_detail">
+                            <h1>DANH THIẾP GIẤY MỸ THUẬT</h1>
+                            <p class="product_detail_desc">
+                                In nhanh lấy liền - Loại giấy cao cấp
+                            </p>
+                            <div class="product_detail_content">
+                                <p class="product_detail_content_title">
+                                    Thông số sản phẩm cơ bản
+                                </p>
+                                <ul>
+                                    <li>Màu sắc: Nhiều màu</li>
+                                    <li>Số mặt in: 1 mặt, 2 mặt</li>
+                                    <li>Chất liệu : Nhiều chất liệu giấy</li>
+                                    <li>Kỹ thuật in: In KTS</li>
+                                    <li>KT thành phẩm: in theo yêu cầu</li>
+                                    <li>
+                                        Gia công: cán bóng, ép nhủ, ép kim, dập
+                                        nổi,cắt thành phần, ...
+                                    </li>
+                                </ul>
+                            </div>
+                            <a class="product_detail_btn" href="#">
+                                YÊU CẦU BÁO GIÁ
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="product_tabs">
+                <div class="container">
+                    <div class="product_tabs_wrap">
+                        <div class="product_tab active" data-tab="tab1">
+                            <p>GIỚI THIỆU ẤN PHẨM</p>
+                        </div>
+                        <div class="product_tab" data-tab="tab2">
+                            <p>NHẬN XÉT & ĐÁNH GIÁ</p>
+                        </div>
+                    </div>
+                    <div class="product_tabs_content" id="tab1">
+                        <!-- map data BE -->
+                        <div class="product_content_desc">
+                            <p>
+                                <span class="txt_bold_green">Danh thiếp</span
+                                > với tên gọi khác Name card, Card Visit,
+                                Business Card là yếu tố quan trọng trong giao
+                                tiếp giúp doanh nghiệp quảng bá hình ảnh của
+                                mình hoặc phát triển thương hiệu cá nhân. 
+                            </p>
+                            <p>
+                                <span class="txt_bold_green"
+                                    >Danh thiếp chất liệu giấy mỹ thuật</span
+                                > sang trọng với nhiều lựa chọn với những mẫu
+                                giấy nhiều màu sắc, các sớ gân giấy nổi lên,
+                                những màu nhũ của giấy, hoặc độ trơn láng của
+                                từng loại giấy, tạo nên hiệu ứng cho những ấn
+                                phẩm trở nên sắc nét và nổi bật hơn. 
+                            </p>
+                        </div>
+                        <div class="product_content_img">
+                            <img
+                                src="./product_imgs/product_detail.png"
+                                alt=""
+                            />
+                        </div>
+                        <!-- close map data BE -->
+                    </div>
+                    <div class="product_tabs_content hidden" id="tab2">
+                        <div class="rating">
+                            <div class="rating_left">
+                                <div class="rating_totals">
+                                    <p class="rating_total">4,9</p>
+                                    <div class="stars">
+                                        <div class="star">
+                                            <img
+                                                src="./product_imgs/star.svg"
+                                                alt=""
+                                            />
+                                        </div>
+                                        <div class="star">
+                                            <img
+                                                src="./product_imgs/star.svg"
+                                                alt=""
+                                            />
+                                        </div>
+                                        <div class="star">
+                                            <img
+                                                src="./product_imgs/star.svg"
+                                                alt=""
+                                            />
+                                        </div>
+                                        <div class="star">
+                                            <img
+                                                src="./product_imgs/star.svg"
+                                                alt=""
+                                            />
+                                        </div>
+                                        <div class="star">
+                                            <img
+                                                src="./product_imgs/star.svg"
+                                                alt=""
+                                            />
+                                        </div>
+                                    </div>
+                                    <p class="rating_amount">102 đánh giá</p>
+                                </div>
+                                <div class="rating_progess">
+                                    <div class="raring_progess_item">
+                                        <p>5</p>
+                                        <div class="raring_progess_bar">
+                                            <div
+                                                style="width: 90%"
+                                                class="raring_progess_bar_line"
+                                            ></div>
+                                        </div>
+                                    </div>
+                                    <div class="raring_progess_item">
+                                        <p>2</p>
+                                        <div class="raring_progess_bar">
+                                            <div
+                                                style="width: 80%"
+                                                class="raring_progess_bar_line"
+                                            ></div>
+                                        </div>
+                                    </div>
+                                    <div class="raring_progess_item">
+                                        <p>3</p>
+                                        <div class="raring_progess_bar">
+                                            <div
+                                                style="width: 60%"
+                                                class="raring_progess_bar_line"
+                                            ></div>
+                                        </div>
+                                    </div>
+                                    <div class="raring_progess_item">
+                                        <p>4</p>
+                                        <div class="raring_progess_bar">
+                                            <div
+                                                style="width: 40%"
+                                                class="raring_progess_bar_line"
+                                            ></div>
+                                        </div>
+                                    </div>
+                                    <div class="raring_progess_item">
+                                        <p>1</p>
+                                        <div class="raring_progess_bar">
+                                            <div
+                                                style="width: 20%"
+                                                class="raring_progess_bar_line"
+                                            ></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rating_right">
+                                <p class="rating_share">
+                                    Chia sẻ nhận xét về sản phẩm
+                                </p>
+                                <a class="btn_primary" href="#">
+                                    <p class="btn_primary-txt regular_16">
+                                        Đánh giá ngay
+                                    </p></a
+                                >
+                            </div>
+                        </div>
+                        <div class="conment">
+                            <div class="comment_item">
+                                <div class="comment_item_img">
+                                    <img src="./product_imgs/user.png" alt="" />
+                                </div>
+                                <div class="comment_item_content">
+                                    <div class="comment_item_info">
+                                        <p class="comment_item_name">
+                                            Nguyễn Thị Kiều Linh
+                                        </p>
+                                        <div class="comment_rating">
+                                            <div class="comment_item_stars">
+                                                <div class="comment_item_star">
+                                                    <img
+                                                        src="./product_imgs/star_sm.svg"
+                                                        alt=""
+                                                    />
+                                                </div>
+                                                <div class="comment_item_star">
+                                                    <img
+                                                        src="./product_imgs/star_sm.svg"
+                                                        alt=""
+                                                    />
+                                                </div>
+                                                <div class="comment_item_star">
+                                                    <img
+                                                        src="./product_imgs/star_sm.svg"
+                                                        alt=""
+                                                    />
+                                                </div>
+                                                <div class="comment_item_star">
+                                                    <img
+                                                        src="./product_imgs/star_sm.svg"
+                                                        alt=""
+                                                    />
+                                                </div>
+                                                <div class="comment_item_star">
+                                                    <img
+                                                        src="./product_imgs/star_sm_grey.svg"
+                                                        alt=""
+                                                    />
+                                                </div>
+                                            </div>
+                                            <img
+                                                src="./product_imgs/dot_black.svg"
+                                                alt=""
+                                            />
+                                            <p class="comment_time">
+                                                1/12/2024
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <p class="comment_item_desc">
+                                        Em đã lấy card của Cty rồi ! Thiết kế
+                                        đẹp, giấy đẹp, giá rẻ, thời gian in
+                                        nhanh. Nhất là nhân viên nhiệt tình, xử
+                                        lý vấn đề nhanh. Em cám ơn nhiều ạ!
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="comment_item">
+                                <div class="comment_item_img">
+                                    <img src="./product_imgs/user.png" alt="" />
+                                </div>
+                                <div class="comment_item_content">
+                                    <div class="comment_item_info">
+                                        <p class="comment_item_name">
+                                            Nguyễn Thị Kiều Linh
+                                        </p>
+                                        <div class="comment_rating">
+                                            <div class="comment_item_stars">
+                                                <div class="comment_item_star">
+                                                    <img
+                                                        src="./product_imgs/star_sm.svg"
+                                                        alt=""
+                                                    />
+                                                </div>
+                                                <div class="comment_item_star">
+                                                    <img
+                                                        src="./product_imgs/star_sm.svg"
+                                                        alt=""
+                                                    />
+                                                </div>
+                                                <div class="comment_item_star">
+                                                    <img
+                                                        src="./product_imgs/star_sm.svg"
+                                                        alt=""
+                                                    />
+                                                </div>
+                                                <div class="comment_item_star">
+                                                    <img
+                                                        src="./product_imgs/star_sm.svg"
+                                                        alt=""
+                                                    />
+                                                </div>
+                                                <div class="comment_item_star">
+                                                    <img
+                                                        src="./product_imgs/star_sm_grey.svg"
+                                                        alt=""
+                                                    />
+                                                </div>
+                                            </div>
+                                            <img
+                                                src="./product_imgs/dot_black.svg"
+                                                alt=""
+                                            />
+                                            <p>1/12/2024</p>
+                                        </div>
+                                    </div>
+                                    <p class="comment_item_desc">
+                                        Em đã lấy card của Cty rồi ! Thiết kế
+                                        đẹp, giấy đẹp, giá rẻ, thời gian in
+                                        nhanh. Nhất là nhân viên nhiệt tình, xử
+                                        lý vấn đề nhanh. Em cám ơn nhiều ạ!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="product_pageper">
+                <h2 class="title">
+                    <span></span>
+                    <span>Các loại giấy in ấn</span>
+                    <span></span>
+                </h2>
+                <p>Các loại giấy mỹ thuật phổ biến tại Thế Giới In Ấn</p>
+            </section>
+        </main>
+        <script src="./app.js"></script>
+    </body>
+</html>
