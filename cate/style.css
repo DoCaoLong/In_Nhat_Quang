@@ -252,6 +252,7 @@ li {
     line-height: 28px;
     letter-spacing: 0.24px;
 }
+/* business_card_list */
 .business_card_list {
     margin-top: 32px;
     display: grid;
@@ -300,6 +301,7 @@ li {
     line-height: 20px; /* 142.857% */
     letter-spacing: 0.35px;
 }
+/* close business_card_list */
 .cate_bot {
     margin-top: 56px;
     display: flex;

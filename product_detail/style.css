@@ -179,14 +179,14 @@ li {
     justify-content: center;
 }
 @media screen and (max-width: 1023.98px) {
-    .cate_title span:nth-child(2) {
+    .title span:nth-child(2) {
         font-size: 18px;
     }
-    .cate_title span:nth-child(1),
-    .cate_title span:nth-child(3) {
+    .title span:nth-child(1),
+    .title span:nth-child(3) {
         width: 12%;
     }
-    .cate_title {
+    .title {
         gap: 14px;
     }
 }
@@ -532,8 +532,9 @@ li {
 /* product page */
 .product_pageper {
     background-color: var(--Defaut-White);
+    margin-top: 48px;
 }
-.product_pageper p {
+.product_pageper .title_desc {
     color: var(--Neutral-500);
     text-align: center;
     font-size: 16px;
@@ -543,5 +544,157 @@ li {
     letter-spacing: 0.8px;
     margin-top: 16px;
 }
+.can_you_care {
+    /* margin-top: 42px; */
+    background-color: var(--Defaut-White);
+}
+.pageper_list {
+    margin-top: 32px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(342px, 1fr));
+    gap: 32px;
+}
+.pageper_item_content {
+    margin-top: 10px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+}
+.pageper_item_img {
+    border-radius: 16px;
+    overflow: hidden;
+}
+.pageper_item_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.pageper_item_name {
+    color: var(--Neutral-900);
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px; /* 133.333% */
+    letter-spacing: 0.288px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--Neutral-900);
+}
+.pageper_item_desc {
+    color: var(--Neutral-500);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+    letter-spacing: 0.35px;
+}
+/* business_card_list */
+.business_card_list {
+    margin-top: 32px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(272px, 1fr));
+    gap: 32px;
+}
+.business_card_item {
+    cursor: pointer;
+}
+.business_card_item:hover .business_card_img img {
+    transform: scale(1.1);
+    transition: all 0.2s linear;
+}
+.business_card_img {
+    overflow: hidden;
+    border-radius: 16px;
+}
+.business_card_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.2s linear;
+}
+.business_card_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+.business_card_name {
+    color: var(--Primary-Orange);
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px; /* 140% */
+    letter-spacing: 0.24px;
+}
+.business_card_desc,
+.business_card_price {
+    color: var(--Neutral-900);
+    text-align: center;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+    letter-spacing: 0.35px;
+}
+/* close business_card_list */
+@media screen and (max-width: 1023.98px) {
+    .product_details_wrap {
+        flex-direction: column;
+    }
+    .product_details_wrap {
+        gap: 14px;
+    }
+    .product_img {
+        aspect-ratio: 1/1;
+    }
+    .product_tab {
+        padding: 14px;
+    }
+    .product_tab p {
+        font-size: 14px;
+    }
+    .breadcrumbs {
+        padding: 12px 0;
+    }
+    .breadcrumbs_wrap {
+        flex-wrap: wrap;
+    }
+    .breadcrumbs_item p {
+        font-size: 12px;
+    }
+    .product_content_desc p {
+        font-size: 12px;
+    }
+    .product_tabs_content {
+        margin-top: 14px;
+        padding-top: 0;
+    }
+    .pageper_list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+    .business_card_list {
+        margin-top: 24px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+    .business_card_name,
+    .business_card_desc,
+    .business_card_price {
+        font-size: 14px;
+    }
+    .business_card_content {
+        margin-top: 4px;
+        gap: 4px;
+    }
+    .pageper_item_name {
+        font-size: 16px;
+    }
+}
+
 /* close product page */
 /* close product detail */
