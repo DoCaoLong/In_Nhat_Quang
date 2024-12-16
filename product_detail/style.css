@@ -676,8 +676,19 @@ li {
     .breadcrumbs_item p {
         font-size: 12px;
     }
-    .product_content_desc p {
+    .product_content_desc p,
+    .rating_amount {
         font-size: 12px;
+        font-weight: 400;
+        line-height: 16px; /* 133.333% */
+        letter-spacing: 0.18px;
+    }
+    .comment_item_name {
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 20px; /* 142.857% */
+        letter-spacing: 0.35px;
     }
     .product_tabs_content {
         margin: 14px 0;
@@ -734,6 +745,10 @@ li {
         font-weight: 400;
         line-height: 16px; /* 133.333% */
         letter-spacing: 0.18px;
+    }
+    .product_detail_btn {
+        font-size: 16px;
+        padding: 12px;
     }
 }
 

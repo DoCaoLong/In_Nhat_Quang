@@ -2040,7 +2040,7 @@ li {
         margin: 0;
     }
     .footer_category_wrap {
-        gap: 24px 14px;
+        gap: 14px;
         grid-template-columns: repeat(2, 1fr);
     }
     .footer_category_item {
