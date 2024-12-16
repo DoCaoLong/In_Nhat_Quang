@@ -108,4 +108,102 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Cập nhật dots ban đầu
     updateDots();
+
+    // slider product ---------------------------------------
+    $(".product_list").slick({
+        dots: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        arrows: true,
+        lazyLoad: "ondemand",
+        prevArrow: $(".product_arrow-left"),
+        nextArrow: $(".product_arrow-right"),
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                },
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                },
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                },
+            },
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+        ],
+    });
+
+    // review slider
+    $(".review_list").slick({
+        dots: false,
+        infinite: true,
+        speed: 300,
+        // slidesToShow: 1,
+        // slidesToScroll: 1,
+        arrows: true,
+        lazyLoad: "ondemand",
+        prevArrow: $(".review_arrow--left"),
+        nextArrow: $(".review_arrow--right"),
+    });
+
+    // blog slider
+    $(".blog_item-news").slick({
+        dots: true,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: false,
+        lazyLoad: "ondemand",
+        customPaging: function (slider, i) {
+            return `<div class="dot_item"></div>`;
+        },
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+        ],
+    });
+    $(".blog_item-news").on(
+        "afterChange",
+        function (event, slick, currentSlide) {
+            console.log("Current active slide:", currentSlide);
+        }
+    );
 });
