@@ -36,6 +36,7 @@
     margin: 0;
     padding: 0;
     font: inherit;
+    -webkit-tap-highlight-color: transparent;
 }
 img,
 picture,
@@ -350,6 +351,7 @@ li {
     line-height: 24px; /* 150% */
     letter-spacing: 0.8px;
 }
+
 /* close category page*/
 
 @media screen and (max-width: 1023.98px) {

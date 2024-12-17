@@ -15,3 +15,30 @@ productTabs.forEach((tab) => {
         target.classList.remove("hidden");
     });
 });
+
+// FAQ
+function toggleAnswer(element) {
+    // Select all faq items
+    const allQuestions = document.querySelectorAll(".faq-question");
+    const allAnswers = document.querySelectorAll(".faq-answer");
+    const allIcons = document.querySelectorAll(".icon");
+
+    // Remove active class from all questions, answers, and icons
+    allQuestions.forEach((question) => question.classList.remove("active"));
+    allAnswers.forEach((answer) => answer.classList.remove("active"));
+    allIcons.forEach((icon) => {
+        icon.classList.remove("active");
+        icon.textContent = "+"; // Reset icons to "+"
+    });
+
+    // Add active class to the clicked question, answer, and icon
+    const answer = element.nextElementSibling;
+    const icon = element.querySelector(".icon");
+
+    answer.classList.add("active");
+    icon.classList.add("active");
+    element.classList.add("active");
+
+    // Change the icon text
+    icon.textContent = "-";
+}
