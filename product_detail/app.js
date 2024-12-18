@@ -41,4 +41,31 @@ function toggleAnswer(element) {
 
     // Change the icon text
     icon.textContent = "-";
+
 }
+
+// popup
+// Get Elements
+const openPopupBtn = document.getElementById("openPopupPrice");
+const closePopupBtn = document.getElementById("closePopupPrice");
+const popup = document.getElementById("popup_price");
+const overlay = document.getElementById("overlay_price");
+const body = document.body;
+
+// Open Popup
+openPopupBtn.addEventListener("click", () => {
+    popup.style.display = "block";
+    overlay.style.display = "block";
+    body.classList.add("no-scroll"); 
+});
+
+// Close Popup
+function closePopup() {
+    popup.style.display = "none";
+    overlay.style.display = "none";
+    body.classList.remove("no-scroll"); 
+}
+
+closePopupBtn.addEventListener("click", closePopup);
+overlay.addEventListener("click", closePopup);
+// close popup

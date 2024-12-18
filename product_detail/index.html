@@ -71,7 +71,11 @@
                                     </li>
                                 </ul>
                             </div>
-                            <a class="product_detail_btn" href="#">
+                            <a
+                                id="openPopupPrice"
+                                class="product_detail_btn"
+                                href="#"
+                            >
                                 YÊU CẦU BÁO GIÁ
                             </a>
                         </div>
@@ -571,6 +575,314 @@
                                 <div class="business_card_price">
                                     Chỉ từ 16.000đ/hộp
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="overlay_price" id="overlay_price"></div>
+                <div class="popup_price" id="popup_price">
+                    <div class="popup_price-content">
+                        <div class="request_price">
+                            <div class="request_price_head">
+                                <h3 class="popup_price_title">
+                                    Yêu cầu báo giá
+                                </h3>
+                                <img
+                                    id="closePopupPrice"
+                                    src="./product_imgs/x.svg"
+                                    alt=""
+                                />
+                            </div>
+                            <div class="request_price_desc">
+                                <p>
+                                    - Các yêu cầu báo giá có thể mất 2h - 24h
+                                    tùy thuộc vào quy cách của sản phẩm và khối
+                                    lượng xử lý trong ngày
+                                </p>
+                                <p>
+                                    - Vì vậy để có báo giá nhanh nhất, bạn có
+                                    thể xem bảng giá có sẵn trong từng trang sản
+                                    phẩm hoặc bảng giá tham khảo bên cạnh.
+                                </p>
+                            </div>
+                            <form method="#" class="request_price_form">
+                                <!-- select  -->
+                                <div
+                                    class="request_price_input_wrap name_card_amount"
+                                >
+                                    <div class="request_price_input">
+                                        <label for="request_name_card"
+                                            >Sản phẩm in cần báo giá</label
+                                        >
+                                        <div class="custom_selector">
+                                            <select>
+                                                <option>
+                                                    Danh thiếp - Namecards
+                                                </option>
+                                                <option>
+                                                    Danh thiếp - Namecards 1
+                                                </option>
+                                                <option>
+                                                    Danh thiếp - Namecards 2
+                                                </option>
+                                                <option>
+                                                    Danh thiếp - Namecards 3
+                                                </option>
+                                                <option>
+                                                    Danh thiếp - Namecards 4
+                                                </option>
+                                            </select>
+                                            <img
+                                                class="icon_select"
+                                                src="./product_imgs/arrow_down_grey.svg"
+                                                alt=""
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="request_price_input">
+                                        <label for="request_amount"
+                                            >Số lượng bản in *</label
+                                        >
+                                        <div class="custom_selector">
+                                            <select>
+                                                <option>1 hộp</option>
+                                                <option>5 hộp</option>
+                                                <option>10 hộp</option>
+                                                <option>15 hộp</option>
+                                                <option>20 hộp</option>
+                                            </select>
+                                            <img
+                                                class="icon_select"
+                                                src="./product_imgs/arrow_down_grey.svg"
+                                                alt=""
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <hr class="hr_custom" />
+                                <!-- desc -->
+                                <div class="request_price_input_wrap">
+                                    <div class="request_price_input">
+                                        <label for="request_desc"
+                                            >Thông tin yêu cầu *</label
+                                        >
+                                        <textarea
+                                            rows="3"
+                                            class="custom_textarea"
+                                            name="request_desc"
+                                            placeholder="Nhập..."
+                                        ></textarea>
+                                    </div>
+                                </div>
+                                <!-- info user -->
+                                <div class="request_price_input_wrap row_3item">
+                                    <div class="request_price_input">
+                                        <label for="request_name"
+                                            >Họ và tên khách hàng *</label
+                                        >
+                                        <input
+                                            class="custom_input"
+                                            placeholder="Họ và tên"
+                                            type="text"
+                                            name="request_name"
+                                            id="request_name"
+                                        />
+                                    </div>
+                                    <div class="request_price_input">
+                                        <label for="request_phone"
+                                            >Số điện thoại *</label
+                                        >
+                                        <input
+                                            class="custom_input"
+                                            placeholder="090..."
+                                            id="request_phone"
+                                            name="request_phone"
+                                            type="text"
+                                        />
+                                    </div>
+                                    <div class="request_price_input">
+                                        <label for="request_email"
+                                            >Email *</label
+                                        >
+                                        <input
+                                            class="custom_input"
+                                            placeholder="adc.123@gmail.com"
+                                            id="request_email"
+                                            name="request_email"
+                                            type="text"
+                                        />
+                                    </div>
+                                </div>
+                                <!-- province -->
+                                <div class="request_price_input_wrap row_3item">
+                                    <div class="request_price_input">
+                                        <label for="request_name_card"
+                                            >Tỉnh/Thành</label
+                                        >
+                                        <div class="custom_selector">
+                                            <select
+                                                id="province"
+                                                name="province"
+                                            >
+                                                <option value="1">
+                                                    Tỉnh/Thành
+                                                </option>
+                                                <option value="2">
+                                                    Danh thiếp - Namecards
+                                                </option>
+                                                <option value="2">
+                                                    Danh thiếp - Namecards
+                                                </option>
+                                            </select>
+                                            <img
+                                                class="icon_select"
+                                                src="./product_imgs/arrow_down_grey.svg"
+                                                alt=""
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="request_price_input">
+                                        <label for="request_amount"
+                                            >Quận/Huyện</label
+                                        >
+                                        <div class="custom_selector">
+                                            <select
+                                                class="district"
+                                                name="district"
+                                            >
+                                                <option value="1">
+                                                    Quận/Huyện
+                                                </option>
+                                                <option value="2">
+                                                    Danh thiếp - Namecards
+                                                </option>
+                                                <option value="2">
+                                                    Danh thiếp - Namecards
+                                                </option>
+                                            </select>
+                                            <img
+                                                class="icon_select"
+                                                src="./product_imgs/arrow_down_grey.svg"
+                                                alt=""
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="request_price_input">
+                                        <label for="request_amount"
+                                            >Xã Phường</label
+                                        >
+                                        <div class="custom_selector">
+                                            <select id="ward" name="ward">
+                                                <option value="1">
+                                                    Xã Phường
+                                                </option>
+                                                <option value="2">
+                                                    Danh thiếp - Namecards
+                                                </option>
+                                                <option value="2">
+                                                    Danh thiếp - Namecards
+                                                </option>
+                                            </select>
+                                            <img
+                                                class="icon_select"
+                                                src="./product_imgs/arrow_down_grey.svg"
+                                                alt=""
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- address -->
+                                <div class="request_price_input_wrap">
+                                    <div class="request_price_input">
+                                        <label for="request_address"
+                                            >Địa chỉ cụ thể
+                                        </label>
+                                        <input
+                                            class="custom_input"
+                                            name="request_address"
+                                            placeholder="Số nhà,tổ,đường"
+                                            type="text"
+                                            id="request_address"
+                                        />
+                                    </div>
+                                </div>
+                                <hr class="hr_custom" />
+                            </form>
+                            <div class="request_price_desc bottom">
+                                <p>
+                                    Khách hàng lần đầu tiên đặt in, chưa quá am
+                                    tường về chất liệu, kích thước in phổ biến.
+                                    Liên hệ ngay với chăm sóc khách hàng để được
+                                    tư vấn cụ thể!
+                                </p>
+                                <p>
+                                    In Nhật Quang hỗ trợ tiếp nhận báo giá đơn
+                                    hàng 24/7 trực tuyến dưới mọi hình thức liên
+                                    lạc - các số hotline, điện thoại (Zalo-
+                                    Mesenger - SMS/Call)
+                                </p>
+                            </div>
+                        </div>
+                        <div class="reference_price">
+                            <div class="reference_price_head">
+                                <h3 class="popup_price_title">Giá tham khảo</h3>
+                                <img
+                                    id="closePopupPrice"
+                                    src="./product_imgs/x.svg"
+                                    alt=""
+                                />
+                            </div>
+                            <div class="popup_price_wrap_table">
+                                <div class="reference_price_table">
+                                    <table>
+                                        <tr>
+                                            <th style="width: 112px">
+                                                Số lượng
+                                            </th>
+                                            <th style="width: 217px">
+                                                In 1 mặt
+                                            </th>
+                                            <th style="width: 217px">
+                                                In 2 mặt/1 hộp
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <td>1 hộp</td>
+                                            <td>90.000 vnd</td>
+                                            <td>180.000 vnd</td>
+                                        </tr>
+                                        <tr>
+                                            <td>5 hộp</td>
+                                            <td>88.000 vnd</td>
+                                            <td>176.000 vnd</td>
+                                        </tr>
+                                        <tr>
+                                            <td>10 hộp</td>
+                                            <td>85.000 vnd</td>
+                                            <td>170.000 vnd</td>
+                                        </tr>
+                                        <tr>
+                                            <td>15 hộp</td>
+                                            <td>82.000 vnd</td>
+                                            <td>164.000 vnd</td>
+                                        </tr>
+                                        <tr>
+                                            <td>20 hộp</td>
+                                            <td>88.000 vnd</td>
+                                            <td>160.000 vnd</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <a
+                                    id="submit_popup_price"
+                                    class="product_detail_btn popup_price_btn"
+                                >
+                                    Tạo yêu cầu
+                                </a>
                             </div>
                         </div>
                     </div>
